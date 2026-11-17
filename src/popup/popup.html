@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ollama Radar</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="popup-container">
+    <header class="popup-header">
+      <div class="brand-row">
+        <span class="brand-icon">🦙</span>
+        <div>
+          <h1>Ollama Radar</h1>
+          <p class="subtitle">Guia de Modelos em Português</p>
+        </div>
+      </div>
+      <span class="version-pill">MV3</span>
+    </header>
+
+    <section class="card hardware-card">
+      <div class="section-title">Sua Máquina Alvo</div>
+      <div class="machine-summary" id="machine-summary">
+        Apple M5 Max • 36 GB RAM Unificada
+      </div>
+      <div class="machine-detail" id="machine-detail">
+        Faixa ideal estimada: 8 GB – 24 GB (14B–35B Q4)
+      </div>
+      <div class="live-ram-info" id="live-ram-info"></div>
+
+      <label class="field-label" for="preset-select">Perfil de Hardware</label>
+      <select id="preset-select" class="select-input"></select>
+
+      <div class="ram-grid">
+        <div>
+          <label class="field-label" for="total-ram-input">RAM Total (GB)</label>
+          <input id="total-ram-input" type="number" min="8" max="512" step="1" class="number-input" />
+        </div>
+        <div>
+          <label class="field-label" for="usable-vram-input">RAM Útil p/ IA (GB)</label>
+          <input id="usable-vram-input" type="number" min="4" max="480" step="1" class="number-input" />
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">Preferências na Página</div>
+      <label class="toggle-row">
+        <input type="checkbox" id="toggle-highlights" />
+        <span>Grifar cards e tamanhos compatíveis</span>
+      </label>
+      <label class="toggle-row">
+        <input type="checkbox" id="toggle-pt" />
+        <span>Mostrar "Para que serve" e tags em PT-BR</span>
+      </label>
+      <label class="toggle-row">
+        <input type="checkbox" id="toggle-dim" />
+        <span>Esmaecer modelos pesados (Swap)</span>
+      </label>
+      <div class="status-msg" id="save-status" aria-live="polite"></div>
+    </section>
+
+    <section class="card legend-card">
+      <div class="section-title">Guia de Cores</div>
+      <ul class="legend-list">
+        <li><span class="dot dot-sweet"></span><strong>🌟 Ideal (14B–35B):</strong> Melhor qualidade + Metal rápido</li>
+        <li><span class="dot dot-fast"></span><strong>⚡ Muito Rápido (≤12B):</strong> Resposta instantânea</li>
+        <li><span class="dot dot-limit"></span><strong>⚠️ No Limite:</strong> Requer fechar apps pesados</li>
+        <li><span class="dot dot-heavy"></span><strong>🚫 Pesado (70B+):</strong> Causa swap lento em disco</li>
+        <li><span class="dot dot-cloud"></span><strong>☁️ Nuvem:</strong> Roda nos servidores Ollama</li>
+      </ul>
+    </section>
+
+    <footer class="popup-footer">
+      <a href="https://ollama.com/search" target="_blank" rel="noopener noreferrer" class="primary-btn">
+        Abrir ollama.com/search ↗
+      </a>
+      <button type="button" id="detect-btn" class="ghost-btn" title="Detecta CPU, GPU e RAM real da sua máquina">
+        🔍 Detectar Hardware
+      </button>
+    </footer>
+  </main>
+
+  <script src="../data/hardware-profile.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+/* Ollama Radar — Styles */
+
+:root {
+  --qmia-bg: #f8fafc;
+  --qmia-bg-elevated: #ffffff;
+  --qmia-border: #e2e8f0;
+  --qmia-text: #0f172a;
+  --qmia-text-muted: #475569;
+
+  --qmia-sweet-border: #10b981;
+  --qmia-sweet-bg: rgba(16, 185, 129, 0.07);
+  --qmia-sweet-pill-bg: #d1fae5;
+  --qmia-sweet-pill-fg: #065f46;
+
+  --qmia-fast-border: #0ea5e9;
+  --qmia-fast-bg: rgba(14, 165, 233, 0.05);
+  --qmia-fast-pill-bg: #e0f2fe;
+  --qmia-fast-pill-fg: #075985;
+
+  --qmia-limit-border: #f59e0b;
+  --qmia-limit-bg: rgba(245, 158, 11, 0.06);
+  --qmia-limit-pill-bg: #fef3c7;
+  --qmia-limit-pill-fg: #92400e;
+
+  --qmia-heavy-border: #ef4444;
+  --qmia-heavy-bg: rgba(239, 68, 68, 0.04);
+  --qmia-heavy-pill-bg: #fee2e2;
+  --qmia-heavy-pill-fg: #991b1b;
+
+  --qmia-cloud-border: #8b5cf6;
+  --qmia-cloud-bg: rgba(139, 92, 246, 0.05);
+  --qmia-cloud-pill-bg: #ede9fe;
+  --qmia-cloud-pill-fg: #5b21b6;
+
+  --qmia-cmd-bg: #0f172a;
+  --qmia-cmd-fg: #e2e8f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --qmia-bg: #111827;
+    --qmia-bg-elevated: #1f2937;
+    --qmia-border: #374151;
+    --qmia-text: #f3f4f6;
+    --qmia-text-muted: #9ca3af;
+
+    --qmia-sweet-bg: rgba(16, 185, 129, 0.11);
+    --qmia-sweet-pill-bg: rgba(16, 185, 129, 0.22);
+    --qmia-sweet-pill-fg: #6ee7b7;
+
+    --qmia-fast-bg: rgba(14, 165, 233, 0.09);
+    --qmia-fast-pill-bg: rgba(14, 165, 233, 0.22);
+    --qmia-fast-pill-fg: #7dd3fc;
+
+    --qmia-limit-bg: rgba(245, 158, 11, 0.1);
+    --qmia-limit-pill-bg: rgba(245, 158, 11, 0.22);
+    --qmia-limit-pill-fg: #fcd34d;
+
+    --qmia-heavy-bg: rgba(239, 68, 68, 0.08);
+    --qmia-heavy-pill-bg: rgba(239, 68, 68, 0.2);
+    --qmia-heavy-pill-fg: #fca5a5;
+
+    --qmia-cloud-bg: rgba(139, 92, 246, 0.1);
+    --qmia-cloud-pill-bg: rgba(139, 92, 246, 0.22);
+    --qmia-cloud-pill-fg: #c4b5fd;
+
+    --qmia-cmd-bg: #090d16;
+    --qmia-cmd-fg: #f8fafc;
+  }
+}
+
+html.dark {
+  --qmia-bg: #111827;
+  --qmia-bg-elevated: #1f2937;
+  --qmia-border: #374151;
+  --qmia-text: #f3f4f6;
+  --qmia-text-muted: #9ca3af;
+
+  --qmia-sweet-bg: rgba(16, 185, 129, 0.11);
+  --qmia-sweet-pill-bg: rgba(16, 185, 129, 0.22);
+  --qmia-sweet-pill-fg: #6ee7b7;
+
+  --qmia-fast-bg: rgba(14, 165, 233, 0.09);
+  --qmia-fast-pill-bg: rgba(14, 165, 233, 0.22);
+  --qmia-fast-pill-fg: #7dd3fc;
+
+  --qmia-limit-bg: rgba(245, 158, 11, 0.1);
+  --qmia-limit-pill-bg: rgba(245, 158, 11, 0.22);
+  --qmia-limit-pill-fg: #fcd34d;
+
+  --qmia-heavy-bg: rgba(239, 68, 68, 0.08);
+  --qmia-heavy-pill-bg: rgba(239, 68, 68, 0.2);
+  --qmia-heavy-pill-fg: #fca5a5;
+
+  --qmia-cloud-bg: rgba(139, 92, 246, 0.1);
+  --qmia-cloud-pill-bg: rgba(139, 92, 246, 0.22);
+  --qmia-cloud-pill-fg: #c4b5fd;
+
+  --qmia-cmd-bg: #090d16;
+  --qmia-cmd-fg: #f8fafc;
+}
+
+/* Barra de filtros no topo da listagem */
+.qmia-toolbar {
+  margin: 0 0 16px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--qmia-border);
+  background: var(--qmia-bg);
+  color: var(--qmia-text);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.qmia-toolbar-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.qmia-toolbar-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.qmia-hw-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--qmia-sweet-pill-bg);
+  color: var(--qmia-sweet-pill-fg);
+}
+
+.qmia-counter {
+  font-size: 12px;
+  color: var(--qmia-text-muted);
+  font-weight: 500;
+}
+
+.qmia-filter-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qmia-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.qmia-filter-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--qmia-text-muted);
+  margin-right: 4px;
+}
+
+.qmia-filter-btn {
+  appearance: none;
+  border: 1px solid var(--qmia-border);
+  background: var(--qmia-bg-elevated);
+  color: var(--qmia-text);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.qmia-filter-btn:hover {
+  border-color: var(--qmia-sweet-border);
+}
+
+.qmia-filter-btn.qmia-active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .qmia-filter-btn.qmia-active {
+    background: #10b981;
+    color: #052e16;
+    border-color: #10b981;
+    font-weight: 600;
+  }
+}
+
+html.dark .qmia-filter-btn.qmia-active {
+  background: #10b981;
+  color: #052e16;
+  border-color: #10b981;
+  font-weight: 600;
+}
+
+/* Destaque nos cards de modelos */
+.qmia-card-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+.qmia-card-enhanced {
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin-bottom: 10px !important;
+  transition: transform 0.15s ease, opacity 0.2s ease, box-shadow 0.15s ease;
+}
+
+.qmia-card-sweet {
+  border: 2px solid var(--qmia-sweet-border) !important;
+  border-left-width: 6px !important;
+  background-color: var(--qmia-sweet-bg) !important;
+  box-shadow: 0 3px 14px rgba(16, 185, 129, 0.12);
+}
+
+.qmia-card-fast {
+  border: 1.5px solid var(--qmia-fast-border) !important;
+  border-left-width: 5px !important;
+  background-color: var(--qmia-fast-bg) !important;
+}
+
+.qmia-card-limit {
+  border: 1.5px solid var(--qmia-limit-border) !important;
+  border-left-width: 5px !important;
+  background-color: var(--qmia-limit-bg) !important;
+}
+
+.qmia-card-cloud {
+  border: 1.5px dashed var(--qmia-cloud-border) !important;
+  background-color: var(--qmia-cloud-bg) !important;
+}
+
+.qmia-card-heavy {
+  border: 1px solid var(--qmia-heavy-border) !important;
+  background-color: var(--qmia-heavy-bg) !important;
+}
+
+.qmia-card-heavy.qmia-dimmed {
+  opacity: 0.6;
+}
+
+.qmia-card-heavy.qmia-dimmed:hover {
+  opacity: 0.96;
+}
+
+.qmia-hidden-by-filter {
+  display: none !important;
+}
+
+/* Grifo individual nas pills de tamanho */
+.qmia-size-pill {
+  font-weight: 600 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  transition: transform 0.1s ease;
+}
+
+.qmia-size-sweet {
+  background-color: var(--qmia-sweet-pill-bg) !important;
+  color: var(--qmia-sweet-pill-fg) !important;
+  border-color: var(--qmia-sweet-border) !important;
+}
+
+.qmia-size-fast {
+  background-color: var(--qmia-fast-pill-bg) !important;
+  color: var(--qmia-fast-pill-fg) !important;
+  border-color: var(--qmia-fast-border) !important;
+}
+
+.qmia-size-limit {
+  background-color: var(--qmia-limit-pill-bg) !important;
+  color: var(--qmia-limit-pill-fg) !important;
+  border-color: var(--qmia-limit-border) !important;
+}
+
+.qmia-size-heavy {
+  background-color: var(--qmia-heavy-pill-bg) !important;
+  color: var(--qmia-heavy-pill-fg) !important;
+  border-color: var(--qmia-heavy-border) !important;
+  text-decoration: line-through;
+  opacity: 0.82;
+}
+
+.qmia-size-cloud {
+  background-color: var(--qmia-cloud-pill-bg) !important;
+  color: var(--qmia-cloud-pill-fg) !important;
+  border-color: var(--qmia-cloud-border) !important;
+}
+
+.qmia-cap-pt {
+  font-weight: 600 !important;
+}
+
+/* Caixa de marcações e resumo em PT-BR dentro do card */
+.qmia-info-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--qmia-border);
+  background: var(--qmia-bg-elevated);
+  color: var(--qmia-text);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.qmia-info-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.qmia-compat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.qmia-compat-sweet {
+  background: var(--qmia-sweet-pill-bg);
+  color: var(--qmia-sweet-pill-fg);
+}
+
+.qmia-compat-fast {
+  background: var(--qmia-fast-pill-bg);
+  color: var(--qmia-fast-pill-fg);
+}
+
+.qmia-compat-limit {
+  background: var(--qmia-limit-pill-bg);
+  color: var(--qmia-limit-pill-fg);
+}
+
+.qmia-compat-heavy {
+  background: var(--qmia-heavy-pill-bg);
+  color: var(--qmia-heavy-pill-fg);
+}
+
+.qmia-compat-cloud {
+  background: var(--qmia-cloud-pill-bg);
+  color: var(--qmia-cloud-pill-fg);
+}
+
+.qmia-compat-unknown {
+  background: var(--qmia-bg);
+  color: var(--qmia-text-muted);
+  border: 1px solid var(--qmia-border);
+}
+
+.qmia-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.qmia-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.qmia-chip-code {
+  background: rgba(99, 102, 241, 0.14);
+  color: #4338ca;
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.qmia-chip-reasoning {
+  background: rgba(168, 85, 247, 0.14);
+  color: #7e22ce;
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+.qmia-chip-chat {
+  background: rgba(14, 165, 233, 0.14);
+  color: #0369a1;
+  border-color: rgba(14, 165, 233, 0.25);
+}
+
+.qmia-chip-vision {
+  background: rgba(236, 72, 153, 0.14);
+  color: #be185d;
+  border-color: rgba(236, 72, 153, 0.25);
+}
+
+.qmia-chip-embedding {
+  background: rgba(20, 184, 166, 0.14);
+  color: #0f766e;
+  border-color: rgba(20, 184, 166, 0.25);
+}
+
+.qmia-chip-agents {
+  background: rgba(249, 115, 22, 0.14);
+  color: #c2410c;
+  border-color: rgba(249, 115, 22, 0.25);
+}
+
+.qmia-chip-specialized {
+  background: rgba(100, 116, 139, 0.16);
+  color: #334155;
+  border-color: rgba(100, 116, 139, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .qmia-chip-code { color: #a5b4fc; }
+  .qmia-chip-reasoning { color: #d8b4fe; }
+  .qmia-chip-chat { color: #7dd3fc; }
+  .qmia-chip-vision { color: #f9a8d4; }
+  .qmia-chip-embedding { color: #5eead4; }
+  .qmia-chip-agents { color: #fdba74; }
+  .qmia-chip-specialized { color: #cbd5e1; }
+}
+
+html.dark .qmia-chip-code { color: #a5b4fc; }
+html.dark .qmia-chip-reasoning { color: #d8b4fe; }
+html.dark .qmia-chip-chat { color: #7dd3fc; }
+html.dark .qmia-chip-vision { color: #f9a8d4; }
+html.dark .qmia-chip-embedding { color: #5eead4; }
+html.dark .qmia-chip-agents { color: #fdba74; }
+html.dark .qmia-chip-specialized { color: #cbd5e1; }
+
+.qmia-purpose {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--qmia-text);
+}
+
+.qmia-purpose strong {
+  font-weight: 700;
+}
+
+.qmia-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.qmia-highlight-tag {
+  font-size: 11px;
+  color: var(--qmia-text-muted);
+  background: var(--qmia-bg);
+  border: 1px solid var(--qmia-border);
+  border-radius: 5px;
+  padding: 1px 7px;
+}
+
+.qmia-cmd-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--qmia-border);
+}
+
+.qmia-cmd-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--qmia-cmd-bg);
+  color: var(--qmia-cmd-fg);
+  user-select: all;
+}
+
+.qmia-copy-btn {
+  appearance: none;
+  border: 1px solid var(--qmia-border);
+  background: var(--qmia-bg);
+  color: var(--qmia-text);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.qmia-copy-btn:hover {
+  border-color: var(--qmia-sweet-border);
+  background: var(--qmia-sweet-pill-bg);
+  color: var(--qmia-sweet-pill-fg);
+}
+
+.qmia-copy-btn.qmia-copied {
+  background: var(--qmia-sweet-border);
+  color: #ffffff;
+  border-color: var(--qmia-sweet-border);
+}

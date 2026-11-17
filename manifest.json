@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Ollama Radar",
+  "version": "1.0.0",
+  "description": "Detecta seu hardware, grifa os modelos de IA do Ollama recomendados para rodar na sua máquina e adiciona marcações em português.",
+  "icons": {
+    "16": "src/icons/icon16.png",
+    "48": "src/icons/icon48.png",
+    "128": "src/icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "system.memory",
+    "system.cpu"
+  ],
+  "host_permissions": [
+    "https://ollama.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Ollama Radar",
+    "default_icon": {
+      "16": "src/icons/icon16.png",
+      "48": "src/icons/icon48.png",
+      "128": "src/icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ollama.com/*"
+      ],
+      "css": [
+        "src/styles/ollama-enhancer.css"
+      ],
+      "js": [
+        "src/data/hardware-profile.js",
+        "src/data/models-catalog-pt.js",
+        "src/content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
